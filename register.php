@@ -84,19 +84,32 @@
     <script>
         document.getElementById("registrationForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> 73f54774b8731a929f99403430587f05ea7e369c
     var pwd = document.getElementById("password").value;
     var cpwd = document.getElementById("cpassword").value;
 
     if (pwd !== cpwd) {
+<<<<<<< HEAD
         
         Swal.fire({
+=======
+           Swal.fire({
+>>>>>>> 73f54774b8731a929f99403430587f05ea7e369c
             icon: 'error',
             title: 'Oops...',
             text: 'Password and Confirm Password do not match!'
         });
     } else {
+<<<<<<< HEAD
         
         var formData = new FormData(this); 
+=======
+       var formData = new FormData(this); 
+>>>>>>> 73f54774b8731a929f99403430587f05ea7e369c
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", this.action, true);
