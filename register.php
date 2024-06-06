@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Document</title>
     
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-9/assets/css/registration-9.css">
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
-                               
+                              
                             </div>
                         </div>
                     </div>
@@ -84,32 +84,19 @@
     <script>
         document.getElementById("registrationForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
-<<<<<<< HEAD
-=======
 
     
->>>>>>> 73f54774b8731a929f99403430587f05ea7e369c
     var pwd = document.getElementById("password").value;
     var cpwd = document.getElementById("cpassword").value;
 
     if (pwd !== cpwd) {
-<<<<<<< HEAD
-        
-        Swal.fire({
-=======
            Swal.fire({
->>>>>>> 73f54774b8731a929f99403430587f05ea7e369c
             icon: 'error',
             title: 'Oops...',
             text: 'Password and Confirm Password do not match!'
         });
     } else {
-<<<<<<< HEAD
-        
-        var formData = new FormData(this); 
-=======
        var formData = new FormData(this); 
->>>>>>> 73f54774b8731a929f99403430587f05ea7e369c
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", this.action, true);

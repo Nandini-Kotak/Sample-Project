@@ -71,11 +71,11 @@ function sendVerificationEmail($email, $otp, $ver_code) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
 
-        //Recipients
+       
         $mail->setFrom('nandinikotak05@gmail.com', 'Nandini');
         $mail->addAddress($email);
 
-        //Content
+       
         $mail->isHTML(true);
         $mail->Subject = 'Verification Code to Verify Your Email Address';
         $msg_body = "<p>To verify your email address, enter this OTP: <b>$otp</b></p>";
@@ -83,7 +83,6 @@ function sendVerificationEmail($email, $otp, $ver_code) {
 
         $mail->send();
     } catch (Exception $e) {
-      
     }
 }
 ?>
