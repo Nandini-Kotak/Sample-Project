@@ -83,7 +83,7 @@ function sendVerificationEmail($email, $otp, $ver_code) {
 
         $mail->send();
     } catch (Exception $e) {
-        // Handle error
+      
     }
 }
 ?>

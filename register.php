@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
     
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-9/assets/css/registration-9.css">
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Additional content can be added here if needed -->
+                               
                             </div>
                         </div>
                     </div>
@@ -83,22 +83,20 @@
 
     <script>
         document.getElementById("registrationForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Perform client-side validation
+    event.preventDefault(); 
     var pwd = document.getElementById("password").value;
     var cpwd = document.getElementById("cpassword").value;
 
     if (pwd !== cpwd) {
-        // Passwords do not match, show SweetAlert
+        
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Password and Confirm Password do not match!'
         });
     } else {
-        // If validation passes, submit the form via AJAX
-        var formData = new FormData(this); // Get form data
+        
+        var formData = new FormData(this); 
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", this.action, true);
