@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-<section class="bg-primary py-3 py-md-5 py-xl-8">
+<section class="bg-primary py-3 py-md-5 py-xl-8" style='height:100vh'>
         <div class="container">
             <div class="row gy-4 justify-content-center">
                 <div class="col-12 col-md-8 col-xl-6">
@@ -20,16 +20,16 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="mb-4">
-                                            <h2 class="h3">Registration</h2>
-                                            <h3 class="fs-6 fw-normal text-secondary m-0">Enter your details to register</h3>
+                                            <h2 class="h3">Login</h2>
+                                            <h3 class="fs-6 fw-normal text-secondary m-0">Enter your email and password to Login</h3>
                                         </div>
                                     </div>
                                 </div> 
-                                <form id="loginForm" action="" method="post">
+                                <form id="loginForm" action="login-backend.php" method="post">
                                     <div class="row gy-3 overflow-hidden">
                                         <div class="col-12">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                                                <input type="text" class="form-control" name="lgemail" id="lgemail" placeholder="name@example.com" required>
                                                 <label for="Email" class="form-label">Email</label>
                                             </div>
                                         </div>
@@ -37,13 +37,13 @@
                                         
                                         <div class="col-12">
                                             <div class="form-floating mb-3">
-                                                <input type="password" class="form-control" name="lgpassword" id="password" placeholder="Password" required>
+                                                <input type="password" class="form-control" name="lgpassword" id="lgpassword" placeholder="Password" required>
                                                 <label for="password" class="form-label">Password</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="d-grid">
-                                                <button class="btn btn-primary btn-lg" type="submit" name="signup_btn" id="signup">Sign up</button>
+                                                <button class="btn btn-primary btn-lg" type="submit" name="login_btn" id="login_btn">Login</button>
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end mt-4">
-                                            <p class="m-0 text-secondary text-center">Don't have an account register? <a href="register.php" class="link-primary text-decoration-none">Sign in</a></p>
+                                            <p class="m-0 text-secondary text-center">Don't have an account <a href="register.php" class="link-primary text-decoration-none">Register</a></p>
                                         </div>
                                     </div>
                                 </div>
