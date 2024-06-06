@@ -51,6 +51,13 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end mt-4">
+                                            <p class="m-0 text-secondary text-center">Send OTP to <a href="login_otp.php" class="link-primary text-decoration-none">Login</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end mt-4">
                                             <p class="m-0 text-secondary text-center">Don't have an account <a href="register.php" class="link-primary text-decoration-none">Register</a></p>
                                         </div>
                                     </div>
