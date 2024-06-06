@@ -83,22 +83,20 @@
 
     <script>
         document.getElementById("registrationForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
-    // Perform client-side validation
+    
     var pwd = document.getElementById("password").value;
     var cpwd = document.getElementById("cpassword").value;
 
     if (pwd !== cpwd) {
-        // Passwords do not match, show SweetAlert
-        Swal.fire({
+           Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Password and Confirm Password do not match!'
         });
     } else {
-        // If validation passes, submit the form via AJAX
-        var formData = new FormData(this); // Get form data
+       var formData = new FormData(this); 
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", this.action, true);
