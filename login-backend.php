@@ -16,7 +16,13 @@ if(isset($_POST['login_btn'])){
             $name=$rowLogin['firstname'];
     
             setcookie("username",$name);
+
+            $last_login = date('Y-m-d H:i:s');
+            $sql_update = "UPDATE users SET last_login='$last_login' WHERE id=".$rowLogin['id'];
+            mysqli_query($conn, $sql_update);
             header("Location:home.php");
+
+          
     
         }else{
              echo "<script>alert('Oops somethng went wrong!');</script>";

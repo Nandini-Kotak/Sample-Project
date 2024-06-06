@@ -34,7 +34,6 @@ if(isset($_POST['login_otp_btn'])){
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $otp = mysqli_real_escape_string($conn, $_POST['lg_otp']);
     
-    // Verify the OTP
     $verify_query = "SELECT * FROM users WHERE email='$email' AND otp='$otp'";
     $result_verify = mysqli_query($conn, $verify_query);
     
@@ -43,14 +42,18 @@ if(isset($_POST['login_otp_btn'])){
         $otp_generated_at = strtotime($rowLogin['otp_generated_at']);
         $current_time = time();
         
-        
         if(($current_time - $otp_generated_at) > 120){
             echo "<script>alert('OTP has expired.'); window.location.href='login_otp.php';</script>";
         } else {
             $_SESSION['uid'] = $rowLogin['id'];
             $name = $rowLogin['firstname'];
             
-            setcookie("username", $name, time() + (86400 * 30), "/"); 
+            setcookie("username", $name, time() + (86400 * 30), "/"); // 86400 = 1 day
+            
+            $last_login = date('Y-m-d H:i:s');
+            $sql_update = "UPDATE users SET last_login='$last_login' WHERE id=".$rowLogin['id'];
+            mysqli_query($conn, $sql_update);
+            
             header("Location: home.php");
             exit();
         }

@@ -48,6 +48,12 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating mb-3">
+                                                <input type="mobile" class="form-control" name="mobile" id="mobile" placeholder="Mobile no" required>
+                                                <label for="contact" class="form-label">Contact</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating mb-3">
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                                                 <label for="password" class="form-label">Password</label>
                                             </div>

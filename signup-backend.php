@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fname = mysqli_real_escape_string($conn, $_POST['firstName']);
         $lname = mysqli_real_escape_string($conn, $_POST['lastName']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $mobile=mysqli_real_escape_string($conn, $_POST['mobile']);
         $pwd = mysqli_real_escape_string($conn, md5($_POST['password']));
 
         // Check if the email is already registered
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($status === 'active') {
                 $response = ['status' => 'error', 'message' => 'Email already registered!'];
             } else {
-                $update_sql = "UPDATE users SET firstname='$fname', lastname='$lname', password='$pwd', otp='$otp', verification_code='$ver_code' WHERE email='$email'";
+                $update_sql = "UPDATE users SET firstname='$fname', lastname='$lname', mobile='$mobile',password='$pwd', otp='$otp', verification_code='$ver_code' WHERE email='$email'";
                 $update_res = mysqli_query($conn, $update_sql);
 
                 if ($update_res) {
@@ -37,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
         } else {
-            $insert_sql = "INSERT INTO users (firstname, lastname, email, password, verification_code, otp) VALUES ('$fname', '$lname', '$email', '$pwd', '$ver_code', '$otp')";
+            $insert_sql = "INSERT INTO users (firstname, lastname, email, mobile,password, verification_code, otp) VALUES ('$fname', '$lname', '$email', '$mobile','$pwd', '$ver_code', '$otp')";
             $insert_res = mysqli_query($conn, $insert_sql);
 
             if ($insert_res) {
